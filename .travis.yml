@@ -1,0 +1,12 @@
+# 권한?
+sudo: required
+# we need docker
+services:
+    - docker
+# id를 복붙할수업으니 태그사용(아무거나 가능)
+before_install:
+    - docker build -t khdrogba/docker-react -f Dockerfile.dev .
+# run test 
+# test 끝나면 exit 함(--coverage)
+script:
+    - docker run khdrogba/docker-react npm run test -- --coverage
