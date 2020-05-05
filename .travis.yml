@@ -24,6 +24,6 @@ deploy :
     bucket_path : "docker"
     on :
         branch : master
-    # travis ci 에서 변수 설정
+    # travis ci 에서 변수 설정c
     access_key_id : $AWS_ACCESS_KEY
     secret_access_key : "$AWS_SECRET_KEY"
