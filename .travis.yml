@@ -10,3 +10,21 @@ before_install:
 # test 끝나면 exit 함(--coverage)
 script:
     - docker run khdrogba/docker-react npm run test -- --coverage
+
+
+deploy :
+    # deploy 할때 이거써라 
+    provider : elasticbeanstalk
+    # 빈스타크에 url(region),appname(app) 에 명시되어있음
+    region : "us-west-2"
+    app : "docker"
+    env : "Docker-env"
+    # s3버킷 s3검색하면나옴
+    bucket_name : "elasticbeanstalk-us-east-2-931130014731"
+    bucket_path : "docker"
+    on :
+        branch : master
+    # travis ci 에서 변수 설정
+    access_key_id : $AWS_ACCESS_KEY
+    secret_access_key :
+        secure : "$AWS_SECRET_KEY"
