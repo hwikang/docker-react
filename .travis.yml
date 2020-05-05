@@ -7,9 +7,9 @@ services:
 before_install:
     - docker build -t khdrogba/docker-react -f Dockerfile.dev .
 # run test 
-# test 끝나면 exit 함(--coverage)
+# test 끝나면 exit 함(-e)
 script:
-    - docker run khdrogba/docker-react npm run test -- --coverage
+    - docker run -e CI=true khdrogba/docker-react npm run test
 
 
 deploy :
