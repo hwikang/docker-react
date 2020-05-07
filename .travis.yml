@@ -16,7 +16,7 @@ deploy :
     # deploy 할때 이거써라 
     provider : elasticbeanstalk
     # 빈스타크에 url(region),appname(app) 에 명시되어있음
-    region : "us-west-2"
+    region : "us-east-2"
     app : "docker"
     env : "Docker-env"
     # s3버킷 s3검색하면나옴
